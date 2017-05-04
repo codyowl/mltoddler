@@ -16,4 +16,15 @@ url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = pandas.read_csv(url, names=names)
 
+#Datavizualisation
+#univariate plots
+dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+#plt.show()
 
+#for histogram
+#dataset.hist()
+#plt.show()
+
+#Multivariate plots
+scatter_matrix(dataset)
+plt.show()
