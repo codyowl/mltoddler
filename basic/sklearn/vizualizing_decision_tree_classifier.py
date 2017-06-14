@@ -3,7 +3,7 @@ from sklearn import tree
 #importing irist dataset
 from sklearn.datasets import load_iris
 import numpy as np
-from sklearn.
+
 
 iris = load_iris()
 
@@ -32,5 +32,18 @@ print test_target
 print classifier.predict(test_data)
 
 #Now for vizualising our decision tree we have to call the "export_graphviz" method
+from sklearn.externals.six import StringIO
+import pydot
+dot_data = StringIO()
+tree.export_graphviz(classifier,
+                     out_file=dot_data,
+                     feature_names=iris.feature_names,
+                     class_names=iris.target_names,
+                     filled=True, rounded=True,
+                     impurity=False)
 
+graph = pydot.graph_from_dot_data(dot_data.getvalue())
+
+#print dir(graph)
+graph.write_pdf("iris.pdf")
 
