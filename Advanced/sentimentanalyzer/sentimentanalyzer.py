@@ -12,7 +12,7 @@ from neon.callbacks import Callbacks
 from neon.models import Model
 from neon.transforms import Accuracy
 from neon.backends import gen_backend
-import preprocess_text
+# import preprocess_text
 import cPickle
 import numpy as np
 
